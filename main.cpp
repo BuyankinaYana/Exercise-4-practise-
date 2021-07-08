@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 using namespace std;
+
 int main()
 {
     string a;
