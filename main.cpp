@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-int main()
+int main(int argc, char *argv[])
 {
     string line;
     string Input_file_name;
@@ -13,11 +13,27 @@ int main()
     vector<string> array_of_strings;
 
     //запрос пути к считываемому файлу
-    cout<<"Enter path to file"<<endl;
-    cin>>Input_file_name;
+    if (argc==2)
+    {
+        Input_file_name=argv[1];
+    }
+    else
+    {
+        cout<<"Enter path to file"<<endl;
+        cin>>Input_file_name;
+    }
+
+
     //запрос пути к записываемому файлу
-    cout<<"Enter the address where you want to save the data"<<endl;
-    cin>>Output_file_name;
+    if (argc==3)
+    {
+        Output_file_name=argv[2];
+    }
+    else
+    {
+        cout<<"Enter the address where you want to save the data"<<endl;
+        cin>>Output_file_name;
+    }
 
     //чтение из файла
     ifstream in;
